@@ -1,10 +1,10 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
+
+<img src="~/Content/images/domiciliary-care-2.jpg" />
+@*<address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />
     <abbr title="Phone">P:</abbr>
@@ -14,4 +14,56 @@
 <address>
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+</address>*@
+
+<br /><br />
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { id = "contact-form" }))
+        { 
+        <fieldset>
+
+            <div class="form-group">
+                <label for="fname">Your Name</label>
+                <input type="text" class="form-control" id="fname" aria-describedby="nameHelp" placeholder="Enter Your Name">
+            </div>
+            <div class="form-group">
+                <label for="postcode">Your Postcode *</label>
+                <input type="text" required="" class="form-control" id="postcode" aria-describedby="postcodeHelp" placeholder="Enter Your postcode">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address *</label>
+                <input type="email" required="" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
+                @* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>*@
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>`
+                <input type="number" required="" class="form-control" id="phone" aria-describedby="NumberHelp" placeholder="Enter Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="messageTextarea">Your Message</label>
+                <textarea class="form-control" id="messageTextarea" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-warning">Clear</button>
+        </fieldset>
+        }
+    </div>
+    <div class="col-md-4">
+        <address>
+            27 Eston Court<br />
+            Bradville<br />
+            Milton Keynes<br />
+            MK13 7DF<br /><br /><hr />
+
+            <abbr class="" title="Phone">Mobile:</abbr>07746 895 715 <br />
+            <abbr title="Phone">Office:</abbr>01908 042557 <br />
+            <abbr title="Phone">Emergency:</abbr>07492 843 016 <br /><br />
+            <abbr title="Email">Email:</abbr>
+            <a href="mailto:info@healthcareaccessltd.co.uk">info@healthcareaccessltd.co.uk</a> <br />
+
+        </address>
+        
+    </div>
+</div>
