@@ -26,7 +26,6 @@ namespace HealthCare.Models
         public string UserEmailAddress { get; set; }
 
         [Display(Name = "Your Phone Number")]
-        [StringLength(15, ErrorMessage = "{0} cannot be longer than 15 characters.")]
         public int UserPhoneNumber { get; set; }
 
         [Display(Name = "Your Message")]
